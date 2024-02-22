@@ -1,0 +1,102 @@
+body {
+    background-color: black;
+    color: aliceblue;
+    font-size: x-large;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+
+.principal {
+    background-color: beige;
+    text-align: center;
+    align-items: center;
+    font-size: xx-large;
+    color: black;
+    border-radius: 50px;
+}
+
+
+.secundaria {
+    background-color: beige;
+    text-align: center;
+    align-items: center;
+    font-size: medium;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+.imagenes {
+    width: 250px;
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: inset;
+    transition: transform 0.3s ease;
+    /* Transición para animación */
+}
+
+
+.cartelera {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas iguales */
+    grid-gap: 10px;
+    /* Espacio entre las imágenes */
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.imagenes:hover {
+    transform: scale(1.1);
+    /* Escalar la imagen al pasar el cursor sobre ella */
+}
+
+
+.pelicula {
+    border: 1px solid #ccc;
+    /* Marco alrededor de la película */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+    /* Transición para animación */
+}
+
+.pelicula:hover {
+    transform: scale(1.04);
+    /* Escalar la película al pasar el cursor sobre ella */
+}
+
+.info {
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 1.2em;
+}
+
+.info p {
+    font-size: 0.9em;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info ul li {
+    margin: 5px 0;
+}
+
