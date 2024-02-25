@@ -17,23 +17,24 @@ class Cine extends Controller
         // Lógica para cargar la vista del formulario de compra de entradas
         return view('resumen');
     }
-    
     public function insertarVenta()
     {
         // Obtener los datos del formulario
-        $nombrePelicula = $this->request->getPost('nombre');
-        $entradas = $this->request->getPost('entradas');
+        $peliculaId = $this->request->getPost('peliculaId');
+        $boletos = $this->request->getPost('entradas');
         $activo = $this->request->getPost('activo');
-
+    
         // Llamar al procedimiento almacenado para insertar la venta
-        $modeloVenta = new \App\Models\ventaModel(); // Reemplaza 'VentaModel' con el nombre real de tu modelo
-        $modeloVenta->query("CALL InsertarVenta('$nombrePelicula', $entradas, $activo)");
-
+        $modeloVenta = new \App\Models\ventaModel();
+        $modeloVenta->query("CALL InsertarVenta($peliculaId, $boletos, $activo)");
+    
         // Redireccionar de vuelta a la cartelera con un mensaje de confirmación
         return redirect()->to(base_url('Cine/cartelera'))->with('success', 'Compra realizada con éxito.');
     }
     
-    
+
+
+
 
 
 }
