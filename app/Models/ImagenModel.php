@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class ImagenModel extends Model
 {
-    protected $table = 'tbl_ima_Imagen'; // Nombre de la tabla de imágenes
-    protected $primaryKey = 'Imagen_Id'; // Nombre de la clave primaria
+    protected $table = 'tbl_ima_Imagen';
+    protected $primaryKey = 'Imagen_Id'; 
 
-    protected $allowedFields = ['Imagen_Nombre', 'Imagen_Imagen']; // Campos permitidos para insertar
+    protected $allowedFields = ['Imagen_Nombre', 'Imagen_Imagen'];
 }

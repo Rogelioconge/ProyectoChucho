@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ventaModel extends Model
 {
-    protected $table = 'tbl_ope_Venta'; // Nombre de la tabla
-    protected $primaryKey = 'Venta_Id'; // Nombre de la clave primaria
-    protected $allowedFields = ['Venta_PeliculaId', 'Venta_Boletos', 'Venta_Activo']; // Campos permitidos para insertar
+    protected $table = 'tbl_ope_Venta';
+    protected $primaryKey = 'Venta_Id';
+    protected $allowedFields = ['Venta_PeliculaId', 'Venta_Boletos', 'Venta_Activo'];
 }

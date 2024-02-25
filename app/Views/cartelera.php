@@ -53,7 +53,6 @@
                 </div>
                 <div class="modal-body">
                     <form id="purchaseForm" action="<?php echo base_url('Cine/insertarVenta'); ?>" method="post">
-                        <!-- Agregamos un campo oculto para enviar el id de la película -->
                         <input type="hidden" id="peliculaId" name="peliculaId" value="peliculaId">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required><br>
@@ -61,7 +60,6 @@
                         <input type="number" id="entradas" name="entradas" min="1" required><br>
                         <label for="pago">Pago:</label>
                         <input type="number" id="pago" name="pago" required><br>
-                        <!-- Campo oculto para el estado activo -->
                         <input type="hidden" id="activo" name="activo" value="1">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -89,11 +87,8 @@
 
 <script>
     $(document).ready(function () {
-        // Capturar el evento clic de las imágenes
         $('.imagenes').click(function () {
-            // Obtener el ID de la imagen clicada
             var peliculaId = $(this).attr('id');
-            // Actualizar el valor del campo oculto con el ID de la película
             $('#peliculaId').val(peliculaId);
         });
     });
