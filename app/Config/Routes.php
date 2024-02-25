@@ -17,3 +17,7 @@ $routes->post('Cine/insertarVenta', 'Cine::insertarVenta');
 
 $routes->post('Cine/insertarVenta', 'Cine::cartelera');
 
+$routes->post('Cine/insertarPelicula', 'Cine::insertarPelicula');
+
+
+$routes->get('Cine/agregarPelicula', 'Cine::agregarPelicula');

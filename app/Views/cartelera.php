@@ -14,6 +14,8 @@
     <!-- Es aqui en donde se tendra el div del titulo -->
     <div class="principal">
         <h1>Las mejores peliculas</h1>
+        <a href="<?php echo base_url('Cine/agregarPelicula'); ?>" class="btn btn-primary">Agregar película</a>
+
     </div>
 
     <!-- Es aqui en donde se tendra el div de la cartelera -->
