@@ -12,9 +12,13 @@ body {
     background-color: beige;
     text-align: center;
     align-items: center;
-    font-size: xx-large;
+    font-size:10rem;
     color: black;
+    margin: 0 auto;
     border-radius: 50px;
+    & h1{
+        font-size: 10rem !important;
+    }
 }
 
 
@@ -99,4 +103,81 @@ body {
 .info ul li {
     margin: 5px 0;
 }
+
+
+
+/* Estilos para el título del modal */
+.modal-title {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos para el botón de cerrar el modal */
+.btn-close {
+    color: #aaa; /* Color del icono del botón */
+    font-size: 1.5rem; /* Tamaño del icono */
+    opacity: 0.7; /* Opacidad del icono */
+    transition: opacity 0.3s; /* Transición de opacidad */
+}
+
+/* Cambio de opacidad al pasar el cursor sobre el botón de cerrar */
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Estilos para el formulario dentro del modal */
+#purchaseForm {
+    margin-bottom: 0; /* Elimina el margen inferior del formulario */
+}
+
+/* Estilos para las etiquetas del formulario */
+label {
+    display: block; /* Muestra las etiquetas en una línea separada */
+    margin-bottom: 5px; /* Espacio inferior entre las etiquetas y los campos de entrada */
+    font-weight: bold; /* Texto en negrita */
+    color: #333;
+}
+
+/* Estilos para los campos de entrada del formulario */
+input[type="text"],
+input[type="number"] {
+    width: 100%; /* Ancho completo del campo de entrada */
+    padding: 0.5rem; /* Relleno interno */
+    margin-bottom: 10px; /* Espacio inferior */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Tamaño total del elemento incluyendo el borde */
+}
+
+/* Estilos para el botón de cancelar del modal */
+.btn-secondary {
+    background-color: #aaa; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.5rem 1rem; /* Relleno interno */
+    margin-right: 10px; /* Margen derecho */
+    transition: background-color 0.3s; /* Transición de color de fondo */
+}
+
+/* Cambio de color de fondo al pasar el cursor sobre el botón de cancelar */
+.btn-secondary:hover {
+    background-color: #888;
+}
+
+/* Estilos para el botón de comprar del modal */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.5rem 1rem; /* Relleno interno */
+    transition: background-color 0.3s; /* Transición de color de fondo */
+}
+
+/* Cambio de color de fondo al pasar el cursor sobre el botón de comprar */
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
 

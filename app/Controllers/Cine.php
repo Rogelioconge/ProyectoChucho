@@ -12,64 +12,42 @@ class Cine extends Controller
         return view('cartelera');
     }
 
-    public function resumen()
+    public function agregarPelicula()
     {
-        // Lógica para cargar la vista del formulario de compra de entradas
-        return view('resumen');
+        return view('agregarPelicula');
     }
-
-
-    public function calcularPrecio()
+    
+    public function insertarVenta()
     {
-        $nombrePelicula = $this->request->getGet('nombre'); // Obtener el nombre de la película seleccionada
+
+        $peliculaId = $this->request->getPost('peliculaId');
+        $boletos = $this->request->getPost('entradas');
+        $activo = $this->request->getPost('activo');
     
-        // Determinar el precio de la entrada según la película seleccionada
-        switch ($nombrePelicula) {
-            case 'Sin Aire':
-                $precio_unitario = 13; // Precio de una entrada para Sin Aire
-                break;
-            case 'Asesinos':
-                $precio_unitario = 12; // Precio de una entrada para Asesinos
-                break;
-            case 'Saltburn':
-                $precio_unitario = 10; // Precio de una entrada para Saltburn
-                break;
-            case 'Adentro':
-                $precio_unitario = 11; // Precio de una entrada para Adentro
-                break;
-            case 'Oppenhaimer':
-                $precio_unitario = 9; // Precio de una entrada para Oppenhaimer
-                break;
-            case 'Dejar atras':
-                $precio_unitario = 11; // Precio de una entrada para Dejar atras
-                break;
-            case 'Saw':
-                $precio_unitario = 10; // Precio de una entrada para Saw
-                break;
-            case 'La sociedad de la nieve':
-                $precio_unitario = 12; // Precio de una entrada para La sociedad de la nieve
-                break;
-            // Agregar casos para otras películas si es necesario...
-            default:
-                $precio_unitario = 10; // Precio de una entrada por defecto
-                break;
-        }
+        $modeloVenta = new \App\Models\ventaModel();
+        $modeloVenta->query("CALL InsertarVenta($peliculaId, $boletos, $activo)");
+        return redirect()->to(base_url('/'))->with('success', 'Compra realizada con éxito.');
+    }
     
+
+    public function insertarPelicula()
+    {
         $nombre = $this->request->getPost('nombre');
-        $entradas = $this->request->getPost('entradas');
-        $pago = $this->request->getPost('pago');
+        $imagen = $this->request->getPost('imagen');
+        $costo = $this->request->getPost('costo');
         
-        if (!$nombre || !$entradas || !$pago) {
-            return redirect()->to(base_url('Cine/resumen'))->with('error', 'Por favor, complete todos los campos.');
-        }
+        $modeloImagen = new \App\Models\ImagenModel();
+        $modeloImagen->query("CALL InsertarImagen('$nombre', '$imagen')");
+        
+        $imagenId = $modeloImagen->insertID();
     
-        $total = $precio_unitario * $entradas;
-        $cambio = $pago - $total;
+        $modeloPelicula = new \App\Models\PeliculaModel();
+        $modeloPelicula->query("CALL InsertarPelicula('$nombre', $imagenId, $costo, 1)");
     
-        // Pasamos los datos necesarios directamente a la vista del formulario
-        return view('resumen', ['nombre' => $nombre, 'total' => $total, 'cambio' => $cambio, 'pago' => $pago]);
+        return redirect()->to(base_url('/'))->with('success', 'Película agregada con éxito.');
     }
     
+
 
 
 }

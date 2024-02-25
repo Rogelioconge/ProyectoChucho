@@ -6,14 +6,18 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Ruta para mostrar la cartelera de cine
+
 $routes->get('/', 'Cine::cartelera');
 
-// Ruta para mostrar el formulario de compra de entradas
-$routes->get('Cine/resumen', 'Cine::resumen');
 
-// Ruta para procesar el formulario y calcular el precio
-$routes->post('Cine/calcularPrecio', 'Cine::calcularPrecio');
+$routes->get('Cine/cartelera', 'Cine::cartelera');
 
 
-$routes->get('/', 'Home::index');
+$routes->post('Cine/insertarVenta', 'Cine::insertarVenta');
+
+$routes->post('Cine/insertarVenta', 'Cine::cartelera');
+
+$routes->post('Cine/insertarPelicula', 'Cine::insertarPelicula');
+
+
+$routes->get('Cine/agregarPelicula', 'Cine::agregarPelicula');
